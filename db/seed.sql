@@ -1,0 +1,14 @@
+INSERT INTO burgers (burger_name, devoured) VALUES ('Ottawa Burgers', FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Philly Burgers', FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Swiss Burgers', FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Mexican Burgers', FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Berlin Burgers', FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Paris Burgers', FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ('New Orleans Burgers', FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Louisiana Burgers', FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Maui Burgers', FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Montreal Burgers', FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Tokyo Burgers', FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Syndey Burgers', FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Venice Burgers', FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ('World Burgers', FALSE);
