@@ -1,5 +1,29 @@
 <ul>
   {{#each burgers}}
-  <li>{{burger_name}} | {{devoured}}</li>
+  <li>{{burger_name}} | {{devoured}}<button class="devoured-btn" data-id="{{id}}">Devour</button></li>
   {{/each}}
 </ul>
+
+<script>
+  document.querySelectorAll(".devoured-btn").forEach(btn => {
+    btn.addEventListener('click', (event) => {
+      const id = btn.getAttribute('data-id');
+
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      const raw = JSON.stringify({"devoured":true});
+
+      const requestOptions = {
+        method: 'PUT',
+        headers: myHeaders,
+        body: raw,
+      };
+
+      fetch(`api/burgers/${id}`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    })
+  })
+</script>
