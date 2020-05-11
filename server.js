@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const router = require('./controllers/burgers_controller');
 
 const PUBLIC_FOLDER_PATH = path.join(process.cwd(), 'public')
 
@@ -15,9 +16,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Route
-app.get('/', (req, res) => {
-  res.status(200).json({ success: 'true' })
-})
+app.use(router);
 
 // Start server
 app.listen(PORT, () => console.log(`Server listening on PORT: ${PORT}`));
