@@ -46,14 +46,15 @@
 </div>
 
 <script>
-  document.querySelectorAll(".devoured-btn").forEach((btn) => {
-    btn.addEventListener('click', (event) => {
-      const id = btn.getAttribute('data-id');
+  document.querySelectorAll(".devoured-btn").forEach((button) => {
+    button.addEventListener('click', (event) => {
+      const id = button.getAttribute('data-id');
+      const devouredStatus = Number(button.getAttribute('data-devouredStatus'));
 
       const myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
 
-      const raw = JSON.stringify({"devoured":true});
+      const raw = JSON.stringify({"devoured": (devouredStatus === 1) ? false : true });
 
       const requestOptions = {
         method: 'PUT',
