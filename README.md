@@ -1,6 +1,10 @@
 # Eat Da Burgers
 [Link to application](https://guarded-scrubland-68407.herokuapp.com/)
 
+<p align="center">
+  <img width="800px" src="splashscreen.png">
+</p>
+
 ## Description
 Eat Da Burgers is a food tackers application.
 
