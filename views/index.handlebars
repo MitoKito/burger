@@ -46,15 +46,15 @@
 </div>
 
 <script>
-  document.querySelectorAll(".devoured-btn").forEach((button) => {
+  document.querySelectorAll('.devoured-btn').forEach((button) => {
     button.addEventListener('click', (event) => {
       const id = button.getAttribute('data-id');
       const devouredStatus = Number(button.getAttribute('data-devouredStatus'));
 
       const myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
+      myHeaders.append('Content-Type', 'application/json');
 
-      const raw = JSON.stringify({"devoured": (devouredStatus === 1) ? false : true });
+      const raw = JSON.stringify({ devoured: devouredStatus !== 1 });
 
       const requestOptions = {
         method: 'PUT',
@@ -64,9 +64,9 @@
 
       fetch(`api/burgers/${id}`, requestOptions)
         .then(location.reload())
-        .catch(error => console.log('error', error));
-    })
-  })
+        .catch((error) => console.log('error', error));
+    });
+  });
 
   document.getElementById('burger-form').addEventListener('submit', (event) => {
     event.preventDefault();
@@ -74,9 +74,9 @@
     const name = document.getElementById('burgerName').value.trim();
 
     const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append('Content-Type', 'application/json');
 
-    const raw = JSON.stringify({ "name": name });
+    const raw = JSON.stringify({ name });
 
     const requestOptions = {
       method: 'POST',
@@ -84,8 +84,8 @@
       body: raw,
     };
 
-    fetch("/api/burgers", requestOptions)
+    fetch('/api/burgers', requestOptions)
       .then(location.reload())
-      .catch(error => console.log('error', error));
-  })
+      .catch((error) => console.log('error', error));
+  });
 </script>

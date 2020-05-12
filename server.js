@@ -3,8 +3,6 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 const router = require('./controllers/burgers_controller');
 
-const PUBLIC_FOLDER_PATH = path.join(process.cwd(), 'public')
-
 // Setup express server
 const app = express();
 

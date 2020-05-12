@@ -1,7 +1,7 @@
 const connection = require('./connection');
 
 const orm = {
-  async selectAll (tableName) {
+  async selectAll(tableName) {
     const query = 'SELECT * FROM ??;';
     try {
       const [rows] = await connection.query(query, tableName);
@@ -14,7 +14,7 @@ const orm = {
     const query = 'INSERT INTO ?? (??) VALUES (?);';
     try {
       const [rows] = await connection.query(query, [tableName, column, value]);
-      return rows
+      return rows;
     } catch (error) {
       console.error(error);
     }
@@ -23,12 +23,11 @@ const orm = {
     const query = 'UPDATE ?? SET ??=? WHERE ??=?;';
     try {
       const [rows] = await connection.query(query, [tableName, column, columnValue, field, fieldValue]);
-      return rows
+      return rows;
     } catch (error) {
       console.error(error);
     }
-  }
-}
+  },
+};
 
 module.exports = orm;
-
