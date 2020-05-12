@@ -1,15 +1,23 @@
-<ul>
-  {{#each burgers}}
-  <li>{{burger_name}} | {{devoured}}<button class="devoured-btn" data-id="{{id}}">Devour</button></li>
-  {{/each}}
-</ul>
+<div class="container">
+  <ul>
+    {{#each burgers}}
+    <li>{{burger_name}} | {{devoured}}<button class="devoured-btn" data-id="{{id}}">Devour</button></li>
+    {{/each}}
+  </ul>
 
-<form id="burger-form">
-  <h1>Burger Form</h1>
-  <label for="burgerName">Name</label>
-  <input type="text" name="burgerName" id="burgerName">
-  <button type="submit">Add burger</button>
-</form>
+  <div class="row">
+    <div class="col">
+      <form id="burger-form">
+        <h1>Add a Burger</h1>
+        <div class="form-group">
+          <label for="burgerName">Burger Name:</label>
+          <input type="text" class="form-control" name="burgerName" id="burgerName">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Add burger</button>
+      </form>
+    </div>
+  </div>
+</div>
 
 <script>
   document.querySelectorAll(".devoured-btn").forEach((btn) => {
